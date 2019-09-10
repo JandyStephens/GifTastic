@@ -11,6 +11,7 @@ $(document).ready(function() {
 
   function showButtons() {
     $("#buttons-view").empty();
+    $("#gif-input").val("");
 
     for (let i = 0; i < topics.length; i++) {
       var topicBtn = $("<button>");
