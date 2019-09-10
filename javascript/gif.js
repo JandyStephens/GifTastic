@@ -42,7 +42,10 @@ $(document).ready(function() {
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-      console.log(response);
+      console.log(response.data[0].images);
+      $("#buttons-view")
+        .append(response.images)
+        .append(response.images.rating);
     });
   });
   showButtons();
