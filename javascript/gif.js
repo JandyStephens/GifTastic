@@ -7,6 +7,8 @@ $(document).ready(function() {
     "fifth element"
   ];
 
+  showButtons();
+
   function showButtons() {
     $("#buttons-view").empty();
 
