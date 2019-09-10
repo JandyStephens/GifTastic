@@ -36,7 +36,7 @@ $(document).ready(function() {
     var queryURL =
       "https://api.giphy.com/v1/gifs/search?api_key=8Exgf9tU7mNJScplIIgNLTVYWdbiaWcL&q=" +
       searchTerm +
-      "&rating=PG-13";
+      "&rating=PG-13&limit=10";
 
     $.ajax({
       url: queryURL,
