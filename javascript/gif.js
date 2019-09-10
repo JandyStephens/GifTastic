@@ -7,8 +7,6 @@ $(document).ready(function() {
     "fifth element"
   ];
 
-  showButtons();
-
   function showButtons() {
     $("#buttons-view").empty();
     $("#gif-input").val("");
@@ -30,4 +28,22 @@ $(document).ready(function() {
     topics.push(gif);
     showButtons();
   });
+
+  $(document).on("click", ".gif", function(response) {
+    // console.log(response);
+    var searchTerm = $(this).attr("data-name");
+    // console.log(searchTerm);
+    var queryURL =
+      "https://api.giphy.com/v1/gifs/search?api_key=8Exgf9tU7mNJScplIIgNLTVYWdbiaWcL&q=" +
+      searchTerm +
+      "&rating=PG-13";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+      console.log(response);
+    });
+  });
+  showButtons();
 });
