@@ -42,10 +42,14 @@ $(document).ready(function() {
       url: queryURL,
       method: "GET"
     }).then(function(response) {
-      console.log(response.data[0].images);
-      $("#buttons-view")
-        .append(response.images)
-        .append(response.images.rating);
+      console.log(response.data);
+      for (let i = 0; i < response.data.length; i++) {
+        var indGifDiv = $("<div>");
+        indGifDiv
+          .append(`<img src="${response.data[i].images.original_still.url}">`)
+          .append(`<h5>Rating: ${response.data[i].rating}</h5>`);
+        $("#gifs-view").append(indGifDiv);
+      }
     });
   });
   showButtons();
